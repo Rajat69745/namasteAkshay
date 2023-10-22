@@ -1,0 +1,35 @@
+{
+  "name": "namasteakshay",
+  "version": "1.0.0",
+  "description": "this is for practise setup (create react app)",
+ 
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rajat69745/namasteAkshay.git"
+  },
+  "keywords": [
+    "Attack",
+    "On",
+    "Titan"
+  ],
+  "author": "Levi Akerman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rajat69745/namasteAkshay/issues"
+  },
+  "homepage": "https://github.com/Rajat69745/namasteAkshay#readme",
+  "devDependencies": {
+    "parcel": "^2.10.0",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "browserlist":[
+    "last 2 version"
+  ]
+}
