@@ -1,0 +1,12 @@
+.resCardBody{
+
+    display: flex;
+    gap: 20px;
+    width: 89%;
+    margin: auto;
+    flex-wrap: wrap;
+    margin: auto;
+
+
+    flex-direction: row;
+}
