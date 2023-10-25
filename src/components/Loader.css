@@ -1,0 +1,17 @@
+
+.loader{
+
+    height: 350px;
+    width: 220px;
+    background: white;
+    border-radius: 10px;
+}
+.loaderBox{
+    display: flex;
+    gap: 20px;
+    width: 89%;
+   
+    margin: auto;
+    margin-top: 120px;
+    flex-wrap: wrap;
+}

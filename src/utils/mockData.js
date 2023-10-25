@@ -1,10 +1,6 @@
-import React from 'react'
-import RestoCard from './RestoCard'
-import './Body.css'
 
-const Body = () => {
 
-  const data = [
+let  restoData = [
     {
       "info": {
         "id": "156149",
@@ -1747,28 +1743,4 @@ const Body = () => {
   ]
 
 
-  return <>  <input type="text" placeholder='Search' />
-  
-  
-
-
-
-  <div className='resCardBody'>
-    
-  
- {data.map((el)=>(
-
-<RestoCard  key={el.info.id} resData={el} />
-
-
- ))}
-
-
-  </div>
-
-  </>
-  
-  
-}
-
-export default Body
+  export default restoData

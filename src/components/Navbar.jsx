@@ -1,13 +1,14 @@
 
 import React from 'react'
 import './Navbar.css'
+import { LOGO_URL } from '../utils/constants'
 const Navbar = () => {
   return (
     <div id='Navbar'>
 
 
         <div>
-            <img src="https://cdn-images-1.medium.com/v2/resize:fit:1200/1*v5SYqjYEdQMPIwNduRrnCw.png" alt="" />
+            <img src={LOGO_URL} alt="" />
         </div>
         <div className='navItem'>
 
