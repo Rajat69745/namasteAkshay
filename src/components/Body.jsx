@@ -1,14 +1,15 @@
 import React from 'react'
 import RestoCard from './RestoCard'
 import './Body.css'
-import  restoData  from '../utils/mockData'
 import Loader from './Loader'
-
+import { Link } from 'react-router-dom'
+import useOnlineStatus from '../utils/useOnlineStatus'
 const Body = () => {
 
   const [listOfResto, setListResto]= React.useState([])
   const [copyData, setCopyData] =React.useState([])
-console.log(copyData)
+  const onlineStatus= useOnlineStatus()
+
  React.useEffect(()=>{
 
    fetchData()
@@ -33,10 +34,25 @@ console.log(copyData)
  }
 
 
+ 
+  if(onlineStatus===false){
+    return(
+      <>
+   
+
+      <h1>offline</h1>
+      </>
+
+    ) 
+  }
+
+
+
+
   return  listOfResto.length===0? <Loader/>: <>
   
   
-  
+
 
     <input type="text" placeholder='Search' onChange={(e)=>{
       
@@ -68,7 +84,8 @@ console.log(copyData)
 
       {copyData.map((el) => (
 
-        <RestoCard key={el.info.id} resData={el} />
+ <Link to={"/restaurants/"+el.info.id}> <RestoCard key={el.info.id} resData={el} />   </Link>
+  
 
 
       ))}
