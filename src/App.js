@@ -3,21 +3,16 @@ import React, { lazy, Suspense } from "react"
 import ReactDOM from "react-dom/client"
 import Navbar from "./components/Navbar"
 import Body from "./components/Body"
+
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom"
 //import AboutUs from "./components/AboutUs"
 //import ContactUs from "./components/ContactUs"
 import ErrorPage from "./components/ErrorPage"
 import RestoMenu from "./components/RestoMenu"
 
-
-
 const AboutUs= lazy(()=>import("./components/AboutUs"))
 
-
-
 const ContactUs= lazy(()=> import('./components/ContactUs'))
-
-
 const AppLayout = () => {
 
     return (

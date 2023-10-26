@@ -1,5 +1,5 @@
 import React from 'react'
-import './RestoCard.css'
+
 import { CDN_URL } from '../utils/constants'
 
 

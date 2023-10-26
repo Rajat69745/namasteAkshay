@@ -1,6 +1,6 @@
 import React from 'react'
 import RestoCard from './RestoCard'
-import './Body.css'
+
 import Loader from './Loader'
 import { Link } from 'react-router-dom'
 import useOnlineStatus from '../utils/useOnlineStatus'
@@ -68,10 +68,10 @@ const Body = () => {
 
 
     
-   const filteredData  = listOfResto.filter((el)  => el.info.avgRating>=4
+   const filteredData = copyData.filter((el)  => el.info.avgRating>=4
 );
 
- setListResto(filteredData)
+ setCopyData(filteredData)
         
 }} >Top rated Resto</button>
 
