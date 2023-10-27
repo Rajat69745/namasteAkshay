@@ -13,6 +13,7 @@ if( resInfo===null) return <h1>loading</h1>
 
     const {name,cuisines, costForTwoMessage}= resInfo.data?.cards[0]?.card?.card?.info
     const {itemCards}= resInfo?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2].card?.card
+    console.log(resInfo)
 
  //  console.log(resInfo?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2].card?.card)
 

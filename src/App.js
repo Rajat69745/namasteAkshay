@@ -16,10 +16,10 @@ const ContactUs= lazy(()=> import('./components/ContactUs'))
 const AppLayout = () => {
 
     return (
-        <>
+        <div>
             <Navbar />
             <Outlet />
-        </>
+        </div>
     )
 }
 

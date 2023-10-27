@@ -1,5 +1,5 @@
 import React from 'react'
-import RestoCard from './RestoCard'
+import RestoCard ,{withPromotedLabel} from './RestoCard'
 
 import Loader from './Loader'
 import { Link } from 'react-router-dom'
@@ -9,6 +9,8 @@ const Body = () => {
   const [listOfResto, setListResto]= React.useState([])
   const [copyData, setCopyData] =React.useState([])
   const onlineStatus= useOnlineStatus()
+
+  const RestoCardPromoted= withPromotedLabel(RestoCard)
 
  React.useEffect(()=>{
 
@@ -54,7 +56,7 @@ const Body = () => {
   
 
 
-    <input type="text" placeholder='Search' onChange={(e)=>{
+    <input className=' border-2 m-6' type="text" placeholder='Search' onChange={(e)=>{
       
 
       const filteredData= listOfResto.filter((el)=>el.info.name.toLowerCase().includes(e.target.value.toLocaleLowerCase()) )
@@ -64,7 +66,7 @@ const Body = () => {
 
     }} />
 
-<button onClick={()=>{
+<button className='m-4 border-2 p-1 bg-green-100 rounded-lg' onClick={()=>{
 
 
     
@@ -79,12 +81,26 @@ const Body = () => {
 
 
 
-    <div className='resCardBody'>
+
+    <div className='flex flex-wrap w-[90%] m-auto gap-8 border-2 '>
 
 
       {copyData.map((el) => (
 
- <Link to={"/restaurants/"+el.info.id}> <RestoCard key={el.info.id} resData={el} />   </Link>
+ <Link to={"/restaurants/"+el.info.id} key={el.info.id}>
+  
+ 
+  {el.info.availability.opened?< RestoCardPromoted resData={el} />: < RestoCard resData={el}/> }
+
+
+
+ 
+   
+   
+   
+   
+   
+     </Link>
   
 
 
