@@ -1,5 +1,6 @@
 import React from 'react'
 import useRestoMenu from '../utils/useRestoMenu'
+import RestoCategory from './RestoCategory'
 
 const RestoMenu = () => {
 
@@ -13,26 +14,30 @@ if( resInfo===null) return <h1>loading</h1>
 
     const {name,cuisines, costForTwoMessage}= resInfo.data?.cards[0]?.card?.card?.info
     const {itemCards}= resInfo?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2].card?.card
-    console.log(resInfo)
+  
+    const categories= resInfo?.data?.cards[2].groupedCard?.cardGroupMap?.REGULAR?.cards.filter((el)=>el.card?.card?.["@type"]==="type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
+    )
 
- //  console.log(resInfo?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2].card?.card)
+    console.log(categories)
+  
 
-
-   
+  
      
 
    // console.log(resInfo?.data?.cards[1]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2].card?.card)
   return (
-    <div>
-        <h1>{name}</h1>
-        <h3>{cuisines.join(", ")} : {costForTwoMessage}</h3>
-        {
-            itemCards.map((el)=>(
+    <div className='text-center'>
+        <h1 className='font-bold my-7 text-2xl'>{name}</h1>
+        <h3 className='font-bold text-lg'>{cuisines.join(", ")} : {costForTwoMessage}</h3>
 
-                <h3 key={el.card.info.id}>{el.card.info.name} : {el.card.info.price}</h3>
-            ))
-        }
         
+ {
+            categories.map((el)=>(
+
+                <RestoCategory categoriesProps={el.card.card} />
+            ))
+        } 
+         
     </div>
   )
 }

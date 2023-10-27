@@ -82,7 +82,7 @@ const Body = () => {
 
 
 
-    <div className='flex flex-wrap w-[90%] m-auto gap-8 border-2 '>
+    <div className='flex flex-wrap w-[70%] m-auto gap-8  '>
 
 
       {copyData.map((el) => (
